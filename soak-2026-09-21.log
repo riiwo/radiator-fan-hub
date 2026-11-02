@@ -1,0 +1,70 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15824
+load:0x40080400,len:3988
+entry 0x4008063c
+I (27) boot: ESP-IDF 6.1.0 2nd stage bootloader
+I (27) boot: compile time Sep 21 2026 02:11:37
+I (28) boot: Multicore bootloader
+I (29) boot: chip revision: v3.0
+I (31) boot.esp32: SPI Speed      : 40MHz
+I (35) boot.esp32: SPI Mode       : DIO
+I (39) boot.esp32: SPI Flash Size : 4MB
+I (42) boot: Enabling RNG early entropy source...
+I (47) boot: Partition Table:
+I (49) boot: ## Label            Usage          Type ST Offset   Length
+I (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (69) boot:  2 factory          factory app      00 00 00010000 00100000
+I (75) boot: End of partition table
+I (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a970h ( 43376) map
+I (102) esp_image: segment 1: paddr=0001a998 vaddr=3ffb0000 size=02bech ( 11244) load
+I (106) esp_image: segment 2: paddr=0001d58c vaddr=40080000 size=02a8ch ( 10892) load
+I (111) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=12330h ( 74544) map
+I (140) esp_image: segment 4: paddr=00032358 vaddr=40082a8c size=097f0h ( 38896) load
+I (156) esp_image: segment 5: paddr=0003bb50 vaddr=50000000 size=00028h (    40) load
+I (162) boot: Loaded app from partition at offset 0x10000
+I (162) boot: Disabling RNG early entropy source...
+I (174) cpu_start: Multicore app
+I (182) cpu_start: GPIO 3 and 1 are used as console UART I/O pins
+I (182) cpu_start: Pro cpu start user code
+I (183) cpu_start: cpu freq: 160000000 Hz
+I (184) app_init: Application information:
+I (188) app_init: Project name:     RadiatorFanBus
+I (193) app_init: App version:      80584bf-dirty
+I (197) app_init: Compile time:     Sep 21 2026 02:11:27
+I (202) app_init: ELF file SHA256:  b35047941...
+I (206) app_init: ESP-IDF:          6.1.0
+I (210) efuse_init: Min chip rev:     v0.0
+I (214) efuse_init: Max chip rev:     v3.99 
+I (218) efuse_init: Chip rev:         v3.0
+I (222) heap_init: Initializing. RAM available for dynamic allocation:
+I (228) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (233) heap_init: At 3FFB3690 len 0002C970 (178 KiB): DRAM
+I (239) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (244) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (249) heap_init: At 4008C27C len 00013D84 (79 KiB): IRAM
+I (256) spi_flash: detected chip: generic
+I (258) spi_flash: flash io: dio
+I (263) main_task: Started on CPU0
+I (263) main_task: Calling app_main()
+
+04_soak: 2 node B chips chained on GPIO25, dwell 600 s, refresh 10 ms
+  cycle OFF R G B, node2 two steps ahead of node1; d <s> sets dwell, p <ms> refresh
+
+00:00:00  node1=OFF  node2=OFF  frame 255 255 255 255 255 255
+00:10:00  node1=OFF  node2=G    frame 255 255 255 255 0 255
+00:20:00  node1=R    node2=B    frame 0 255 255 255 255 0
+00:30:00  node1=G    node2=OFF  frame 255 0 255 255 255 255
+07:10:00  node1=G    node2=OFF  frame 255 0 255 255 255 255
+07:20:00  node1=B    node2=R    frame 255 255 0 0 255 255
+07:30:00  node1=OFF  node2=G    frame 255 255 255 255 0 255
+07:40:00  node1=R    node2=B    frame 0 255 255 255 255 0
+07:50:00  node1=G    node2=OFF  frame 255 0 255 255 255 255
+08:00:00  node1=B    node2=R    frame 255 255 0 0 255 255
+08:10:00  node1=OFF  node2=G    frame 255 255 255 255 0 255

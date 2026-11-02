@@ -1,0 +1,5 @@
+.pio
+.vscode
+sdkconfig.*
+src/secrets.h
+managed_components/
