@@ -5,6 +5,8 @@ single-purpose programs. Each program verifies exactly one thing and may only us
 component code that the previous program proved. The expected readings for each program
 live next to its build stage in `docs/tasks/radiator-fan-bus.md`.
 
+How the firmware works, its MQTT topics and how to run it without Home Assistant: `AGENTS.md`.
+
 | Program | Proves | Needs |
 |---------|--------|-------|
 | `01-timing` | bit timing of `components/ws2811_tx` on the wire | jumper D1 (GPIO3) → D2 (GPIO4), DMM |
